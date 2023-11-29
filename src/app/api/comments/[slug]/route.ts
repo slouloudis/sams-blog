@@ -8,9 +8,14 @@ import { NextRequest, NextResponse } from 'next/server'
  
 export async function GET(request: NextRequest, {params} : {params: {slug: string}}) {
     // this should def be in a try catch!
-    const slug = params.slug;
-    const comments = await getComments(slug)
-    return NextResponse.json({comments})
+
+    try {
+        const slug = params.slug;
+        const comments = await getComments(slug)
+        return NextResponse.json({comments})
+    } catch (error) {
+        return NextResponse.json({error})
+    }
 }
 
 export async function POST(request: NextRequest, {params} : {params: {slug: string}}) {
