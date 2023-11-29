@@ -1,12 +1,14 @@
+import { WEB_SITE } from "config";
+
 export default async function Comments({postSlug}: {postSlug: string}) {
     // `/blog/post-1`
     // make sure this is going to the write url 
-    const WEBSITE_URL = 'http://localhost:3001'
+    
 
     let comments = [];
 
     try {
-        const commentsResult = await fetch(`${WEBSITE_URL}/api/comments/${postSlug}`, {next: {revalidate: 0}})
+        const commentsResult = await fetch(`${WEB_SITE}/api/comments/${postSlug}`, {next: {revalidate: 0}})
         const response = await commentsResult.json()
         comments = response.comments.rows
         console.log(response.comments)
