@@ -2,7 +2,6 @@ import { WEB_SITE } from "config";
 
 export default async function Comments({postSlug}: {postSlug: string}) {
     // `/blog/post-1`
-    // make sure this is going to the write url 
     
 
     let comments = [];
