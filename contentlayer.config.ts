@@ -21,7 +21,7 @@ export default makeSource({
   documentTypes: [Post],
   mdx: {
     // @ts-ignore
-    remarkPlugins: [remarkMdxImages],
+    remarkPlugins: remarkMdxImages,
     //@ts-ignore
     esbuildOptions: (options) => {
       options.loader = {
