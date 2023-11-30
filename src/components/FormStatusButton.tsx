@@ -1,6 +1,8 @@
 'use client'
 
+
 // just renaming the import/hook here.
+// @ts-expect-error
 import {experimental_useFormStatus as useFormStatus} from 'react-dom'
 
 export default function FormStatusButton() {
