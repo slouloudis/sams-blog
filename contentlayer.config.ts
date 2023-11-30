@@ -22,6 +22,7 @@ export default makeSource({
   mdx: {
     // @ts-ignore
     remarkPlugins: [remarkMdxImages],
+    //@ts-ignore
     esbuildOptions: (options) => {
       options.loader = {
         ...options.loader,
