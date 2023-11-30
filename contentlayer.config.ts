@@ -1,5 +1,7 @@
 // contentlayer.config.ts
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import remarkMdxImages from 'remark-mdx-images'
+
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -14,4 +16,19 @@ export const Post = defineDocumentType(() => ({
   },
 }))
 
-export default makeSource({ contentDirPath: 'posts', documentTypes: [Post] })
+export default makeSource({ 
+  contentDirPath: 'posts', 
+  documentTypes: [Post],
+  mdx: {
+    // @ts-ignore
+    remarkPlugins: [remarkMdxImages],
+    esbuildOptions: (options) => {
+      options.loader = {
+        ...options.loader,
+        'jpg': 'dataurl'
+      }
+      return options
+    }
+  } 
+
+})

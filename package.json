@@ -16,6 +16,7 @@
     "next-contentlayer": "^0.3.4",
     "react": "^18",
     "react-dom": "^18",
+    "remark-mdx-images": "^3.0.0",
     "short-uuid": "^4.2.2"
   },
   "devDependencies": {
