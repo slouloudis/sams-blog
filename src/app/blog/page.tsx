@@ -1,5 +1,6 @@
 import { getPosts } from "@/lib/posts";
 import Link from 'next/link'
+import TestComp from "@/components/TestComp";
 
 export default function Page() {
     const posts = getPosts()

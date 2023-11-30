@@ -19,6 +19,7 @@ export async function GET(request: NextRequest, {params} : {params: {slug: strin
 }
 
 export async function POST(request: NextRequest, {params} : {params: {slug: string}}) {
+    
     const slug = params.slug
 
     const formData = await request.formData()
