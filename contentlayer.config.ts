@@ -19,15 +19,20 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({ 
   contentDirPath: 'posts', 
   documentTypes: [Post],
+  // @ts-ignore
   mdx: {
     // @ts-ignore
     remarkPlugins: remarkMdxImages,
     //@ts-ignore
     esbuildOptions: (options) => {
+      // @ts-ignore
       options.loader = {
+        // @ts-ignore
         ...options.loader,
+        // @ts-ignore
         'jpg': 'dataurl'
       }
+      // @ts-ignore
       return options
     }
   } 
